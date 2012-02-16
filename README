@@ -1,0 +1,28 @@
+Slimstart
+================================
+
+Slimstart is a setup for getting up to speed with your PHP web quickly. It is based on:
+
+- Slim Framework (Sinatra-like lightweight PHP framework)
+- Mustache (Logicless templating for PHP and JS)
+- Layout based on HTML5 Boilerplate
+- SASS
+- Modernizr
+- jQuery
+- CSS Reset
+- Mustache.js [https://github.com/janl/mustache.js/]
+
+Sass: (Need to have SASS installed, [http://sass-lang.com])
+sass --watch www/scss:www/css --style expanded
+
+Everything should work from start (if you are using nginx you have to modify the nginx.conf file according to your local setup), go to 
+
+http://slimstart.dev/hello/
+
+and you should see "Hello world"
+
+Go to
+
+http://slimstart.dev/hello/ridgestreet
+
+and you should see "Hello ridgestreet"
