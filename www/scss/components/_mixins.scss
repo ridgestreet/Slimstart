@@ -1,0 +1,70 @@
+@mixin clearfix {
+    *display:inline-block;
+    &:after {
+        content:" ";
+        display:block;
+        height:0;
+        clear:both;
+        visibility:hidden;
+    }
+}
+
+@mixin placeholder($color:#ccc) {
+    :-moz-placeholder {
+        color: $color;
+    }
+    ::-webkit-input-placeholder {
+        color: $color;
+    }
+}
+
+@mixin transition($property:all, $duration:1.0s, $function:ease) {
+    -webkit-transition:$property $duration $function;
+       -moz-transition:$property $duration $function;
+    	-ms-transition:$property $duration $function;
+    	 -o-transition:$property $duration $function;	
+    	    transition:$property $duration $function;
+}
+
+@mixin transform($scale:1, $rotate:0deg, $translate_x:0px, $translate_y:0px, $skew_x:0deg, $skew_y:0deg){
+    -webkit-transform: scale($scale) rotate($rotate) translate($translate_x, $translate_y) skew($skew_x, $skew_y);
+       -moz-transform: scale($scale) rotate($rotate) translate($translate_x, $translate_y) skew($skew_x, $skew_y);
+        -ms-transform: scale($scale) rotate($rotate) translate($translate_x, $translate_y) skew($skew_x, $skew_y);
+         -o-transform: scale($scale) rotate($rotate) translate($translate_x, $translate_y) skew($skew_x, $skew_y);
+            transform: scale($scale) rotate($rotate) translate($translate_x, $translate_y) skew($skew_x, $skew_y);
+}
+
+@mixin radial-gradient($inner, $outer) {
+    background: $inner;
+    background: -moz-radial-gradient(center, ellipse cover, $inner 0%, $outer 100%);
+    background: -webkit-gradient(radial, center center, 0px, center center, 100%, color-stop(0%,$inner), color-stop(100%,$outer));
+    background: -webkit-radial-gradient(center, ellipse cover, $inner 0%,$outer 100%);
+    background: -o-radial-gradient(center, ellipse cover, $inner 0%,$outer 100%);
+    background: -ms-radial-gradient(center, ellipse cover, $inner 0%,$outer 100%);
+    background: radial-gradient(center, ellipse cover, $inner 0%,$outer 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#{$inner}', endColorstr='#{$outer}',GradientType=1 );
+}
+
+@mixin text-drop-shadow($horizontal:1px, $vertical:1px, $blur_radius:3px, $color:#000, $alpha:0.5) {
+    text-shadow: $horizontal $vertical $blur_radius rgba($color, $alpha);
+}
+
+@mixin linear($from, $to) {
+	background: $from;
+	background: -moz-linear-gradient(top, $from 0%, $to 100%);
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,$from), color-stop(100%,$to));
+	background: -webkit-linear-gradient(top, $from 0%,$to 100%);
+	background: -o-linear-gradient(top, $from 0%,$to 100%);
+	background: -ms-linear-gradient(top, $from 0%,$to 100%);
+	background: linear-gradient(top, $from 0%,$to 100%);
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#{$from}', endColorstr='#{$to}',GradientType=0 );
+}
+
+@mixin quick-linear($base, $offset : 8%, $invert : false){
+	@if $invert == false {
+		@include linear(lighten($base, $offset), darken($base, $offset));
+	} @else if $invert == true {
+		@include linear(darken($base, $offset), lighten($base, $offset));
+	}
+    
+}

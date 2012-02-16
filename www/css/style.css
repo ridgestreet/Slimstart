@@ -79,3 +79,46 @@ h3 {
 h4, h5, h6 {
   font-size: 1.1em;
 }
+
+a {
+  color: #0066cc;
+}
+
+#wrapper {
+  width: 960px;
+  margin: 0px auto;
+}
+
+header {
+  padding: 10px 0;
+  margin: 10px 0;
+  border-bottom: 1px solid #dadada;
+}
+header h1, header h2 {
+  margin: .15em 0;
+}
+header h2 {
+  font-weight: normal;
+  color: #999999;
+  font-size: 1.2em;
+}
+
+footer {
+  padding: 20px;
+  margin: 10px 0;
+  text-align: center;
+  border-top: 1px solid #dadada;
+}
+
+@media only screen and (max-width: 767px) {
+  #wrapper {
+    width: 320px;
+    margin: 0px auto;
+  }
+}
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+  #wrapper {
+    width: 768px;
+    margin: 0px auto;
+  }
+}

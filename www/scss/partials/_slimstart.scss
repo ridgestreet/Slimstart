@@ -1,0 +1,25 @@
+#wrapper {
+    width:960px;
+    margin:0px auto;
+}
+
+header {
+    padding:10px 0;
+    margin:10px 0;
+    border-bottom:1px solid $border_color;
+    h1, h2 {
+        margin:.15em 0;
+    }
+    h2 {
+        font-weight:normal;
+        color:$complementary_text_color;
+        font-size:1.2em;
+    }
+}
+
+footer {
+    padding:20px;
+    margin:10px 0;
+    text-align:center;
+    border-top:1px solid $border_color;
+}
