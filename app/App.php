@@ -1,13 +1,10 @@
 <?
-    /* Paths start */
-
-	define('ROOT', dirname(__FILE__) . '/../');
-	define('EXTERNALS_ROOT', ROOT . '/externals/');
-	define('TEMPLATE_ROOT', ROOT . '/templates/');
-
+    define('ROOT', dirname(__FILE__) . '/../');
+    define('EXTERNALS_ROOT', ROOT . '/externals/');
+    define('TEMPLATE_ROOT', ROOT . '/templates/');
+    
     set_include_path(get_include_path() . PATH_SEPARATOR . implode(PATH_SEPARATOR, array(ROOT, EXTERNALS_ROOT)));
-    /* Paths end */
-
+    
     require "slim/Slim.php";
     require "mustache/Mustache.php";
     
@@ -24,10 +21,16 @@
         
         public function render($view, $data = array(), $layout = 'layout'){
             
+            /*
+            
+            Need to set up a way to filter data before supporting this
+            
             if($this->slim->request()->headers('X-Requested-With')) {
                 $content = json_encode($data);
                 return $content;
             }
+            
+            */
             
             $this->mustache = new Mustache();
             
@@ -51,11 +54,6 @@
         }
         
         public function get($route, $callback){
-            
-            /*
-                Check if Ajax-request, if so respond with JSON
-            */
-            
             return $this->slim->get($route, $callback);
         }
         
