@@ -1,11 +1,6 @@
+@import "bootstrap";
 
 @import "components/settings";
 @import "components/mixins";
 
-@import "partials/reset";
-@import "partials/normalize";
-
 @import "partials/slimstart";
-
-@import "responsive/smartphone";
-@import "responsive/tablet";

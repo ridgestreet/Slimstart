@@ -16,7 +16,7 @@
         public function __construct(){
             $this->slim = new Slim();
             $this->template_path = TEMPLATE_ROOT;
-            $this->templates = array(); //Fix later
+            $this->templates = array(); //TODO: Read into an array that can be used in order to expose client side
         }
         
         public function render($view, $data = array(), $layout = 'layout'){
