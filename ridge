@@ -1,0 +1,39 @@
+#!/bin/bash
+
+function usage() {
+    echo "runenv start|kill"
+}
+
+function start() {
+    echo "starting env..."
+    tmux new-session -d -s ridgeenv
+    tmux new-window -t ridgeenv:1 -n "compass" "compass watch www"
+    tmux new-window -t ridgeenv:2 -n "coffescript" "coffee --compile --output www/js/ www/src/"
+    echo "started ridge"
+}
+
+function kill() {
+    echo "killing env..."
+    killall compass
+    killall coffescript
+    tmux kill-session -t ridgeenv
+    echo "killed ridge"
+}
+
+if [ -z $1 ]; then
+    usage
+    exit 1
+fi
+
+case $1 in
+    start)
+        start
+        ;;
+    kill)
+        kill
+        ;;
+    *)
+        usage
+        exit 1
+    ;;
+esac

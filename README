@@ -6,14 +6,20 @@ Slimstart is a setup for getting up to speed with your PHP web quickly. It is ba
 - Slim Framework (Sinatra-like lightweight PHP framework)
 - Mustache (Logicless templating for PHP and JS)
 - Layout based on HTML5 Boilerplate
-- SASS
+- Compass + SASS
+- Twitter Bootstrap (Sass-version https://github.com/jlong/sass-twitter-bootstrap)
+- CoffeeScript
 - Modernizr
 - jQuery
 - CSS Reset
 - Mustache.js [https://github.com/janl/mustache.js/]
 
-Sass: (Need to have SASS installed, [http://sass-lang.com])
-sass --watch www/scss:www/css --style expanded
+Sass: (Need to have SASS and Compass installed, [http://sass-lang.com])
+$ gem update --system
+$ gem install compass
+
+CoffeeScript (Need Node.js and Node Package Manager (npm) http://npmjs.org/)
+$ npm install -g coffee-script
 
 Everything should work from start (if you are using nginx you have to modify the nginx.conf file according to your local setup), go to 
 
