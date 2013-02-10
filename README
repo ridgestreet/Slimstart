@@ -21,7 +21,7 @@ $ gem install compass
 CoffeeScript (Need Node.js and Node Package Manager (npm) http://npmjs.org/)
 $ npm install -g coffee-script
 
-Run environment (Requires tmux - http://tmux.sourceforge.net/):
+Run environment (Requires tmux - http://tmux.sourceforge.net/ )
 $ cd {project_home}
 $ ./ridge start
 
