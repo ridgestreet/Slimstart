@@ -2,7 +2,7 @@
 (function() {
 
   $(function() {
-    return console.log("jquery init");
+    return console.log("jquery-init");
   });
 
 }).call(this);
