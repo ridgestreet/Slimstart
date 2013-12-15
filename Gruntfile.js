@@ -2,9 +2,23 @@ module.exports = function(grunt) {
   // Your grunt code goes in here.
   grunt.initConfig({
     pkg: grunt.file.readJSON('package.json'),
+    coffee: {
+      dist: {
+        files: [{
+          expand: true,
+          cwd: 'www/coffee',
+          src: ['{,*/}*.coffee'],
+          dest: 'www/js/src',
+          rename: function(dest, src) {
+            return dest + '/' + src.replace(/\.coffee$/, '.js');
+          }
+        }]
+      }
+    },
     lint: {
       files: [
         'www/js/vendors/mustache.js',
+        'www/js/src/**/*.js',
         'www/js/ridge.js'
       ]
     },
@@ -22,8 +36,15 @@ module.exports = function(grunt) {
       }
     },
     watch: {
-      files: ['<%= lint.files %>'],
-      tasks: ['concat', 'uglify']
+      scripts: {
+        files: ['<%= lint.files %>'],
+        tasks: ['concat', 'uglify']
+      },
+      coffee: {
+        files: ['www/coffee/*.coffee'],
+        tasks: ['coffee']
+      }
+      
     },
     uglify: {
       options: {
@@ -43,6 +64,7 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-contrib-watch');
   grunt.loadNpmTasks('grunt-contrib-concat');
   grunt.loadNpmTasks('grunt-contrib-cssmin');
+  grunt.loadNpmTasks('grunt-contrib-coffee');
 
   grunt.registerTask('default', ['concat']);
   
