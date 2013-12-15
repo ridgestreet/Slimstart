@@ -1,18 +1,18 @@
 Slimstart
 =========
 
-Slimstart is a setup for getting up to speed with your PHP web quickly. It is based on:
+Slimstart is an Open Source based setup compiled by [80 Ridge Street Media AB](http://ridgestreet.com) for getting up to speed with your PHP web quickly. It is based on:
 
 - Slim Framework (Sinatra-like lightweight PHP framework)
 - Mustache (Logicless templating for PHP and JS)
 - Layout based on HTML5 Boilerplate
 - Compass + SASS
-- Twitter Bootstrap (Sass-version https://github.com/jlong/sass-twitter-bootstrap)
+- [Twitter Bootstrap Sass-version](https://github.com/jlong/sass-twitter-bootstrap)
 - CoffeeScript
 - Modernizr
 - jQuery
 - CSS Reset
-- Mustache.js [https://github.com/janl/mustache.js/]
+- [Mustache.js](https://github.com/janl/mustache.js/)
 
 Sass: (Need to have SASS and Compass installed, [http://sass-lang.com])
 $ gem update --system
