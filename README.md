@@ -1,5 +1,5 @@
 Slimstart
-================================
+=========
 
 Slimstart is a setup for getting up to speed with your PHP web quickly. It is based on:
 
