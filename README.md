@@ -5,30 +5,45 @@ Slimstart is an Open Source based setup compiled by [80 Ridge Street Media AB](h
 
 - Slim Framework (Sinatra-like lightweight PHP framework)
 - Mustache (Logicless templating for PHP and JS)
-- Layout based on HTML5 Boilerplate
-- Compass + SASS
+- Sass - Compass (soon Bourbon.io instead)
 - [Twitter Bootstrap Sass-version](https://github.com/jlong/sass-twitter-bootstrap)
 - CoffeeScript
-- Modernizr
 - jQuery
-- CSS Reset
 - [Mustache.js](https://github.com/janl/mustache.js/)
+- [Grunt.js](http://gruntjs.com) for build steps and other repetitive tasks
 
-Sass: (Need to have SASS and Compass installed, [http://sass-lang.com])
+Sass
+----
+
+You need to have [SASS](http://sass-lang.com) and Compass installed
 
 `$ gem update --system`
 
 `$ gem install compass`
 
-CoffeeScript (Need Node.js and Node Package Manager (npm) http://npmjs.org/)
 
-`$ npm install -g coffee-script`
-
-Run environment (Requires tmux - http://tmux.sourceforge.net/ )
+First time you run Slimstart
+----------------------------
 
 `$ cd {project_home}`
 
-`$ ./ridge start`
+`$ npm install`
+
+Installs all needed grunt modules to your local environment
+
+
+Run environment
+---------------
+
+`$ cd {project_home}`
+
+`$ grunt`
+
+`$ compass watch www`
+
+
+Test it
+-------
 
 Everything should work from start (if you are using nginx you have to modify the nginx.conf file according to your local setup), go to 
 
