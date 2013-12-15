@@ -1,9 +1,9 @@
 <?
     class Db {
         private static $instance;
-        private $server = ""; //database server 
-        private $user = ""; //database login name 
-        private $pass = ""; //database login password 
+        private $server = "";   //database server 
+        private $user = "";     //database login name 
+        private $pass = "";     //database login password 
         private $database = ""; //database name
         private $link_id, $query_id;
         
@@ -117,9 +117,6 @@
             } 
 
             $q = rtrim($q, ', ') . ' WHERE '.$where.';'; 
-            
-            //die($q);
-
             return $this->query($q); 
         }
         
