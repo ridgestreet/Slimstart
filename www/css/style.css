@@ -7674,24 +7674,18 @@ td.visible-print {
     display: none !important;
   }
 }
-/* line 1, ../scss/partials/_slimstart.scss */
-#wrapper {
-  width: 960px;
-  margin: 0px auto;
-}
-
-/* line 6, ../scss/partials/_slimstart.scss */
+/* line 2, ../scss/partials/_slimstart.scss */
 header {
   text-align: center;
 }
-/* line 8, ../scss/partials/_slimstart.scss */
+/* line 4, ../scss/partials/_slimstart.scss */
 header h1 {
   margin: 36px 0 27px;
   font-size: 40px;
   font-weight: 300;
   text-align: center;
 }
-/* line 14, ../scss/partials/_slimstart.scss */
+/* line 10, ../scss/partials/_slimstart.scss */
 header h2 {
   margin: -18px 0 27px;
   font-size: 18px;
@@ -7701,14 +7695,14 @@ header h2 {
   text-align: center;
 }
 
-/* line 24, ../scss/partials/_slimstart.scss */
+/* line 20, ../scss/partials/_slimstart.scss */
 footer {
   padding: 20px;
   margin: 10px 0;
   text-align: center;
 }
 
-/* line 30, ../scss/partials/_slimstart.scss */
+/* line 26, ../scss/partials/_slimstart.scss */
 hr.soften {
   height: 1px;
   margin: 24px 0;
