@@ -11,14 +11,14 @@ module.exports = function(grunt) {
     concat: {
       dist: {
         src: '<%= lint.files %>',
-        dest: 'www/js/dist/slim.js',
+        dest: 'www/js/dist/slimstart.js',
         separator: ';'
       }
     },
     min: {
       dist: {
-        src: ['www/js/dist/slim.js'],
-        dest: 'www/js/dist/slim.min.js'
+        src: ['www/js/dist/slimstart.js'],
+        dest: 'www/js/dist/slimstart.min.js'
       }
     },
     watch: {
