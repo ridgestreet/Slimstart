@@ -1,0 +1,6 @@
+{
+    "require": {
+        "slim/slim": "2.*",
+        "mustache/mustache": "~2.1"
+    }
+}
