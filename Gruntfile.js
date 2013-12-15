@@ -4,7 +4,6 @@ module.exports = function(grunt) {
     pkg: grunt.file.readJSON('package.json'),
     lint: {
       files: [
-        'www/js/vendors/jquery.1.7.1.js',
         'www/js/vendors/mustache.js',
         'www/js/ridge.js'
       ]
