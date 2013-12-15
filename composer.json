@@ -1,6 +1,7 @@
 {
     "require": {
         "slim/slim": "2.*",
-        "mustache/mustache": "~2.1"
+        "mustache/mustache": "~2.1",
+        "slim/views": "0.1.*"
     }
 }
