@@ -6,8 +6,8 @@
     
     set_include_path(get_include_path() . PATH_SEPARATOR . implode(PATH_SEPARATOR, array(ROOT, EXTERNALS_ROOT)));
     
-    require "slim/Slim.php";
-    require 'slim/Views/MustacheView.php';
+    require 'vendor/autoload.php';
+
     MustacheView::$mustacheDirectory = 'mustache/';
     
     class App {
