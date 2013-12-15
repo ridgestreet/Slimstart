@@ -8,20 +8,20 @@
     
     require 'vendor/autoload.php';
 
-    MustacheView::$mustacheDirectory = 'mustache/';
-    
+    Mustache_Autoloader::register();
+
     class App {
         
         private $mustache, $templates, $template_path, $memcached;
         public $slim; //If you wanna go directly at $app->slim->somehting
         
         public function __construct(){
-            $this->slim = new Slim(array(
-              'view' => 'MustacheView',
-              'templates.path' => TEMPLATE_ROOT
-            ));
+            $this->slim = new \Slim\Slim();
             $this->template_path = TEMPLATE_ROOT;
             $this->templates = $this->_get_templates(TEMPLATE_ROOT); //TODO: Cache in Memcache
+            $this->mustache = new Mustache_Engine(array(
+              'partials' => $this->templates['partials']
+            ));
             // $this->memcached = new Memcached;
         }
         
@@ -31,11 +31,22 @@
           $data = array_merge($defaults, $data);
           
           if($contentType === 'html') {
-            return $this->slim->render($view, $data);
+            return $this->_render($view, $data);
           } else if ($contentType === 'json') {
             $this->slim->response()->header('Content-Type', 'application/json');
             return json_encode($data);
           }
+        }
+        
+        private function _render ($view, $data, $layout = 'layout.html') {
+          $page_template = $this->template_path . $view;
+          $layout_template = $this->template_path . $layout;
+          
+          if (file_exists($page_template) && file_exists($layout_template)) {
+            $data['page'] = $this->mustache->render(file_get_contents($page_template), $data, $this->templates['partials']);
+            $full_page_content = $this->mustache->render(file_get_contents($layout_template), $data, $this->templates['partials']);
+            return $full_page_content;
+          } 
         }
         
         public function get($route, $callback){
