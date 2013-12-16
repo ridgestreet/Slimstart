@@ -56,3 +56,10 @@ Go to
 http://slimstart.dev/hello/ridgestreet
 
 and you should see "Hello ridgestreet"
+
+How to contribute
+-----------------
+
+* Fork the Slimstart repository.
+* Create a new branch for each feature or improvement.
+* Send a pull request from each branch to the official repository’s develop branch.
