@@ -45,12 +45,13 @@ Run environment
 Test it
 -------
 
-### Run as a standalone PHP development server
+#### Run as a standalone PHP development server
 
 `$ cd www`
+
 `$ php -S localhost:8080`
 
-### Run it with Apache or Nginx
+#### Run it with Apache or Nginx
 
 Everything should work from start (if you are using nginx you have to modify the nginx.conf file according to your local setup), go to 
 
