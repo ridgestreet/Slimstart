@@ -1,4 +1,4 @@
-<?
+<?php
     define('ROOT', dirname(__FILE__) . '/../');
     define('EXTERNALS_ROOT', ROOT . '/externals/');
     define('TEMPLATE_ROOT', ROOT . 'templates/');
@@ -6,7 +6,7 @@
     
     set_include_path(get_include_path() . PATH_SEPARATOR . implode(PATH_SEPARATOR, array(ROOT, EXTERNALS_ROOT)));
     
-    require 'vendor/autoload.php';
+    require dirname(__FILE__) . '/../vendor/autoload.php';
 
     Mustache_Autoloader::register();
 
@@ -111,4 +111,3 @@
             return $files;
         }
     }
-?>
