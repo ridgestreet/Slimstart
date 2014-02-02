@@ -18,6 +18,7 @@ module.exports = function(grunt) {
     lint: {
       files: [
         'www/js/vendors/mustache.js',
+        'www/js/vendors/bootstrap.js',
         'www/js/src/**/*.js',
         'www/js/ridge.js'
       ]
@@ -43,8 +44,18 @@ module.exports = function(grunt) {
       coffee: {
         files: ['www/coffee/*.coffee'],
         tasks: ['coffee']
+      },
+      sass: {
+        files: ['www/scss/**/*.{scss,sass}'],
+        tasks: ['sass:dist']
       }
-      
+    },
+    sass: {
+        dist: {
+            files: {
+                'www/css/style.css': 'www/scss/style.scss'
+            }
+        }
     },
     uglify: {
       options: {
