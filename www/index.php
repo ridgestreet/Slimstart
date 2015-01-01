@@ -4,18 +4,19 @@ require __DIR__ . '/../vendor/autoload.php';
 
 use Slimstart\App;
 
-$template_path = dirname(__FILE__) . '/../templates';
-    
 $app = new App([
-    'templates.path' => $template_path
+    'app.path' => dirname(__FILE__) . '/../application',
+    'log.level' => \Slim\Log::DEBUG,
+    'cookies.encrypt' => true,
+    'cookies.cipher' => MCRYPT_RIJNDAEL_256,
+    'cookies.cipher_mode' => MCRYPT_MODE_CBC,
+    'debug' => true,
+    'mode' => 'development'
 ]);
 
-$app->get('/', function() use ($app){
-    echo $app->render('index.html');
-})->name('home_view');
-
-$app->get('/hello/(:name)', function($name = 'world') use ($app){
-    echo $app->render('world.html', array('name' => $name));
-})->name('hello_view');
+$app->addRoutes([
+    'home',
+    'hello'
+]);
 
 $app->run();
