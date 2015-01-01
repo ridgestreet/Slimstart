@@ -1,1 +1,5 @@
-Hello {{name}}
+{% extends "layout.html" %}
+{% block content %}
+<p class="lead">Hello {{name}}</p>
+<a href="{{ urlFor('home_view') }}">Back</a>
+{% endblock %}

@@ -1,3 +1,30 @@
-{{>header}}
-  {{{page}}}
-{{>footer}}
+<!doctype html>
+<html class="no-js" lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>Slimstart</title>
+  <meta name="viewport" content="width=device-width">
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+<div id="wrapper">
+  <header>
+    <hgroup>
+      <div class="marketing">
+        <h1>Slimstart</h1>
+        <h2>Launch a good looking, well built PHP web in minutes</h2>
+      </div>
+
+    </hgroup>
+  </header>
+  <hr class="soften" />
+  <div role="main" class="container">
+  {% block content %}{% endblock %}
+  </div>
+  <footer>Built on <a href="https://github.com/ridgestreet/Slimstart">Slimstart</a> by <a href="http://ridgestreet.se">80 Ridge Street Media</a></footer>
+</div>
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+<script src="/js/dist/slimstart.min.js" type="text/javascript" charset="utf-8"></script>
+</body>
+</html>

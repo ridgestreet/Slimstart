@@ -1,6 +1,29 @@
 {
+    "name": "ridgestreet/slimstart",
+    "description": "Get started quickly with a slim PHP setup",
     "require": {
-        "slim/slim": "2.*",
-        "mustache/mustache": "~2.1"
+        "php": ">=5.4",
+        "mustache/mustache": "dev-master",
+        "slim/slim": "dev-master",
+        "php-activerecord/php-activerecord": "dev-master",
+        "twig/twig": "*",
+        "slim/views": "dev-master"
+    },
+
+    "license": "MIT",
+
+    "authors": [
+        {
+            "name": "Mattias Hising",
+            "email": "mattias@ridgestreet.se"
+        }
+    ],
+
+    "minimum-stability": "dev",
+
+    "autoload": {
+        "psr-0" : {
+            "Slimstart" : "src/"
+        }
     }
 }

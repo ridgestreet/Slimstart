@@ -1,21 +1,21 @@
 <?php
 
-    if (php_sapi_name() == 'cli-server') {
-        if (preg_match('/\.(?:png|jpg|jpeg|gif)$/', $_SERVER["REQUEST_URI"])) {
-            return false;    // serve the requested resource as-is.
-        }
-    }
+require __DIR__ . '/../vendor/autoload.php';
 
-    require '../app/App.php';
+use Slimstart\App;
+
+$template_path = dirname(__FILE__) . '/../templates';
     
-    $app = new App();
-    
-    $app->get('/', function() use ($app){
-        echo $app->render('index.html');
-    });
-    
-    $app->get('/hello/(:name)', function($name = 'world') use ($app){
-        echo $app->render('world.html', array('name' => $name));
-    });
-    
-    $app->run();
+$app = new App([
+    'templates.path' => $template_path
+]);
+
+$app->get('/', function() use ($app){
+    echo $app->render('index.html');
+})->name('home_view');
+
+$app->get('/hello/(:name)', function($name = 'world') use ($app){
+    echo $app->render('world.html', array('name' => $name));
+})->name('hello_view');
+
+$app->run();

@@ -1,16 +1,15 @@
-
+{% extends "layout.html" %}
+{% block content %}
 <div class="row">
     <div class="col-sm-6">
         <h2>What does it do?</h2>
         <ul class="list-unstyled">
-            <li><a href="/hello/">Hello World</a></li>
+            <li><a href="{{ urlFor('hello_view') }}">Hello World</a></li>
             <li>
-                <a href="/hello/param">Hello param</a>
-                <code>
-<pre>
-$app->get('/hello/(:name)', function($name = 'world') use ($app)
-</pre>                    
-                </code>
+                <a href="{{ urlFor('hello_view', {"name": "param"}) }}">Hello param</a>
+
+                <pre><code>$app->get('/hello/(:name)', function($name = 'world') use ($app)</code></pre>
+
             </li>
         </ul>
     </div>
@@ -79,6 +78,7 @@ $app->run();
       <p><a href="http://getcomposer.org/">Composer</a> is a Dependency Manager for PHP. It allows you to declare the dependent libraries your project needs and it will install them in your project for you.</p>
     </div>
 </div>
+{% endblock %}
 
 
 
