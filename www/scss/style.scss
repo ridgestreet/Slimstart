@@ -1,6 +1,9 @@
-@import "bootstrap";
+@import "bourbon";
+
+@import "../../bower_components/bootstrap-sass-official/assets/stylesheets/bootstrap";
 
 @import "components/settings";
+
 @import "components/mixins";
 
 @import "partials/slimstart";

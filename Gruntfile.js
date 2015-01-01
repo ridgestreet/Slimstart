@@ -2,6 +2,7 @@ module.exports = function(grunt) {
   // Your grunt code goes in here.
   grunt.initConfig({
     pkg: grunt.file.readJSON('package.json'),
+
     coffee: {
       dist: {
         files: [{
@@ -15,14 +16,15 @@ module.exports = function(grunt) {
         }]
       }
     },
+
     lint: {
       files: [
-        'www/js/vendors/mustache.js',
-        'www/js/vendors/bootstrap.js',
+        'bower_components/bootstrap-sass-official/assets/javascripts/bootstrap.js',
         'www/js/src/**/*.js',
         'www/js/ridge.js'
       ]
     },
+
     concat: {
       dist: {
         src: '<%= lint.files %>',
@@ -30,33 +32,56 @@ module.exports = function(grunt) {
         separator: ';'
       }
     },
+
     min: {
       dist: {
         src: ['www/js/dist/<%= pkg.name %>.js'],
         dest: 'www/js/dist/<%= pkg.name %>.min.js'
       }
     },
+
     watch: {
+
+      grunt: {
+        files: ['Gruntfile.js']
+      },
+
       scripts: {
         files: ['<%= lint.files %>'],
         tasks: ['concat', 'uglify']
       },
+
       coffee: {
         files: ['www/coffee/*.coffee'],
         tasks: ['coffee']
       },
+
       sass: {
-        files: ['www/scss/**/*.{scss,sass}'],
+        files: ['www/scss/**/*.scss'],
         tasks: ['sass:dist']
+      },
+
+      css: {
+        files: ['www/css/**/*.css'],
+        options: {
+          livereload: true
+        }
       }
     },
+
     sass: {
         dist: {
+
+            options: {
+              includePaths: require('node-bourbon').includePaths
+            },
+
             files: {
                 'www/css/style.css': 'www/scss/style.scss'
             }
         }
     },
+
     uglify: {
       options: {
         banner: '/*! <%= pkg.name %> <%= grunt.template.today("yyyy-dd-mm") %> */\n'
@@ -67,6 +92,7 @@ module.exports = function(grunt) {
         }
       }
     }
+
   });
   
   grunt.loadNpmTasks('grunt-contrib-uglify');
@@ -78,6 +104,6 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-contrib-coffee');
   grunt.loadNpmTasks('grunt-sass');
 
-  grunt.registerTask('default', ['concat', 'uglify', 'watch']);
+  grunt.registerTask('default', ['watch']);
   
 };

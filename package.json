@@ -2,15 +2,17 @@
   "name": "slimstart",
   "version": "1.0.0",
   "devDependencies": {
+    "bower": "^1.3.12",
     "grunt": "*",
-    "grunt-contrib-uglify": "*",
-    "grunt-contrib-jshint": "*",
-    "grunt-contrib-qunit": "*",
-    "grunt-contrib-watch": "*",
+    "grunt-contrib-coffee": "*",
     "grunt-contrib-concat": "*",
     "grunt-contrib-cssmin": "*",
-    "grunt-contrib-coffee": "*",
-    "grunt-sass": "*"
+    "grunt-contrib-jshint": "*",
+    "grunt-contrib-qunit": "*",
+    "grunt-contrib-uglify": "*",
+    "grunt-contrib-watch": "*",
+    "grunt-sass": "*",
+    "node-bourbon": "^1.2.3"
   },
   "dependencies": {
     "grunt-contrib-cssmin": "~0.7.0",

@@ -1,0 +1,21 @@
+{
+  "name": "Slimstart",
+  "version": "2.0.0",
+  "homepage": "https://github.com/ridgestreet/Slimstart",
+  "authors": [
+    "Mattias Hising <mattias@ridgestreet.se>"
+  ],
+  "description": "Launch a good looking, well built PHP web in minutes",
+  "license": "MIT",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "bootstrap-sass-official": "~3.3.1"
+  }
+}
